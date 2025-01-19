@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Authentication Callback</title>
+</head>
+<body>
+    <h1>Authentication Callback</h1>
+    <p>Thank you for logging in. Your session is active.</p>
+    <script>
+        // Log URL parameters for debugging
+        const urlParams = new URLSearchParams(window.location.search);
+        console.log("Authorization Code:", urlParams.get("code"));
+        console.log("State:", urlParams.get("state"));
+    </script>
+</body>
+</html>
