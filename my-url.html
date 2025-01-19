@@ -6,11 +6,23 @@
 <body>
     <h1>Authentication Callback</h1>
     <p>Thank you for logging in. Your session is active.</p>
+    <p>The app is processing your information...</p>
     <script>
         // Log URL parameters for debugging
         const urlParams = new URLSearchParams(window.location.search);
-        console.log("Authorization Code:", urlParams.get("code"));
-        console.log("State:", urlParams.get("state"));
+        const authCode = urlParams.get("code");
+        const state = urlParams.get("state");
+
+        // Display logged information in the console
+        console.log("Authorization Code:", authCode);
+        console.log("State:", state);
+
+        // Optionally display a user-friendly message
+        if (authCode) {
+            document.body.innerHTML += "<p>Authorization Code received. Processing your request...</p>";
+        } else {
+            document.body.innerHTML += "<p>No Authorization Code found. Please try again.</p>";
+        }
     </script>
 </body>
 </html>
